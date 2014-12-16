@@ -395,7 +395,7 @@ inline static void MUTEX_UNLOCK_SOFTAP_SET(dhd_pub_t * dhdp)
 
 #define WAKE_LOCK_TIMEOUT(pub, sec)		dhd_htc_wake_lock_timeout(pub, sec)
 
-#define DHD_PACKET_TIMEOUT_MS	1000
+#define DHD_PACKET_TIMEOUT_MS	125
 #define DHD_EVENT_TIMEOUT_MS	1500
 
 void dhd_net_if_lock(struct net_device *dev);
