@@ -102,9 +102,9 @@ static u32 msm_fb_pseudo_palette[16] = {
 static struct ion_client *iclient;
 
 u32 msm_fb_debug_enabled;
-u32 msm_fb_msg_level = 7;
+u32 msm_fb_msg_level = 0;
 
-u32 mddi_msg_level = 5;
+u32 mddi_msg_level = 0;
 
 #define PERF_EXPIRE_TICK 2
 static const unsigned long perf_qos_duration = 300;
