@@ -1170,7 +1170,7 @@ static int msm_hsic_suspend(struct msm_hsic_hcd *mehci)
 	msm_hsic_suspend_timestamp = 0;
 	
 
-	dev_info(mehci->dev, "HSIC-USB in low power mode\n");
+	// dev_info(mehci->dev, "HSIC-USB in low power mode\n");
 
 	return 0;
 }
@@ -1282,7 +1282,7 @@ skip_phy_resume:
 	spin_unlock_irqrestore(&mehci->wakeup_lock, flags);
 	
 
-	dev_info(mehci->dev, "HSIC-USB exited from low power mode\n");
+	// dev_info(mehci->dev, "HSIC-USB exited from low power mode\n");
 
 	return 0;
 }
@@ -1528,7 +1528,7 @@ static int ehci_hsic_bus_suspend(struct usb_hcd *hcd)
 	}
 
 	dbg_log_event(NULL, "Suspend RH", 0);
-	pr_info("%s: Suspend RH\n", __func__);
+	pr_debug("%s: Suspend RH\n", __func__);
 	return ehci_bus_suspend(hcd);
 }
 
@@ -2499,7 +2499,7 @@ static int msm_hsic_pm_resume(struct device *dev)
 #ifdef CONFIG_PM_RUNTIME
 static int msm_hsic_runtime_idle(struct device *dev)
 {
-	dev_info(dev, "EHCI runtime idle\n");
+	// dev_info(dev, "EHCI runtime idle\n");
 	return 0;
 }
 
@@ -2508,7 +2508,7 @@ static int msm_hsic_runtime_suspend(struct device *dev)
 	struct usb_hcd *hcd = dev_get_drvdata(dev);
 	struct msm_hsic_hcd *mehci = hcd_to_hsic(hcd);
 
-	dev_info(dev, "EHCI runtime suspend\n");
+	// dev_info(dev, "EHCI runtime suspend\n");
 
 	dbg_log_event(NULL, "Run Time PM Suspend", 0);
 
@@ -2520,7 +2520,7 @@ static int msm_hsic_runtime_resume(struct device *dev)
 	struct usb_hcd *hcd = dev_get_drvdata(dev);
 	struct msm_hsic_hcd *mehci = hcd_to_hsic(hcd);
 
-	dev_info(dev, "EHCI runtime resume\n");
+	// dev_info(dev, "EHCI runtime resume\n");
 
 	dbg_log_event(NULL, "Run Time PM Resume", 0);
 

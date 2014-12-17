@@ -133,7 +133,6 @@ static u64 get_iowait_time(int cpu)
 #endif
 
 
-extern void htc_print_active_wake_locks(int type);
 extern void htc_show_interrupts(void);
 extern void htc_timer_stats_onoff(char onoff);
 extern void htc_timer_stats_show(u16 water_mark);
@@ -321,7 +320,6 @@ void htc_pm_monitor_work(struct work_struct *work)
 #endif
 	
 	
-	htc_print_active_wake_locks(WAKE_LOCK_SUSPEND);
 	htc_print_vddmin_gpio_status();
 
 	queue_delayed_work(htc_pm_monitor_wq, &htc_pm_delayed_work, msecs_to_jiffies(msm_htc_util_delay_time));
@@ -348,7 +346,6 @@ void htc_kernel_top_accumulation_monitor_work(struct work_struct *work)
 
 	if (!pm_monitor_enabled) {
 		htc_show_interrupts();
-		htc_print_active_wake_locks(WAKE_LOCK_SUSPEND);
 	}
 
 	queue_delayed_work(htc_kernel_top_monitor_wq, &htc_kernel_top_delayed_work, msecs_to_jiffies(msm_htc_util_top_delay_time));
